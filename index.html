@@ -1,53 +1,28 @@
-<html>
-
-  <head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r113/three.min.js"></script>
-    <style>
-      body {
-        margin: 0;
-      }
-
-      canvas {
-        width: 100%;
-        height: 100%
-      }
-
-    </style>
-  </head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Three JS Starter</title>
   <style>
-body {
-    margin: 0;
-}
- {
-    width: 100%;
-    height: 100%;
-    display: block;
-    background: url(resources/images/daikanyama.jpg) no-repeat center center;
-    background-size: cover;
-}
-</style>
-  
-  <body>
-    <script>
-      // Create a scene
-      const scene = new THREE.Scene();
-
-      // Create a renderer
-      const renderer = new THREE.WebGLRenderer();
-
-      // Set the size of the renderer
-      renderer.setSize(window.innerWidth, window.innerHeight);
-
-      // Add the renderer to the page
-      document.body.appendChild(renderer.domElement);
-
-      // Create a camera
-      const camera = new THREE.PerspectiveCamera(
-        75,
-        window.innerWidth / window.innerHeight,
-        0.1,
-        1000
-      ); 
-    </script>
-      </body>
-      
+    html, body {
+      margin: 0;
+      height: 100%;
+    }
+    .buttons {
+      position: absolute;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="buttons">
+    <button type="button" id="toggle-capture">Start Capturing Frames</button>
+    <button type="button" id="reload">Reload</button>
+  </div>
+  <canvas id="canvas"></canvas>
+  <script src="./ccapture/CCapture.all.min.js"></script>
+  <script src="./src/index.js" type="module"></script>
+</body>
+</html>
